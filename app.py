@@ -1,11 +1,12 @@
 from flask import Flask
 from flask import request
+from flask import render_template
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "<p>Hello, World!</p>"
+    return render_template('home.html')
 
 @app.route("/upload", methods=["POST"])
 def upload():

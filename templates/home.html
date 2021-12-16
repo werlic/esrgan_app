@@ -1,0 +1,31 @@
+{% extends "master.html" %}
+
+{% block title %}ESRGAN Project - Super Resolution image{% endblock %}
+
+{% block body %}
+<nav class="navbar navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><h3 class="fw-bold">ESRGAN Project</h3></a>
+        <ul class="navbar-nav flex-right">
+            <li>About</li>
+        </ul>
+    </div>
+</nav>
+<div class="container-fluid bg-light">
+    <div class="row py-5 allign-content-center">
+        <div class="col-md-4  text-center">
+            <h1 class="fw-bold">Do you want scaling your image?</h3>
+            <p></p>
+        </div>
+        <div class="col-md-8">
+            <img src="{{ url_for('static', filename='images/picture_dynamic_gradient_icon.png') }}" alt="Icon_photo">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-8">
+
+        </div>
+    </div>
+</div>
+{% endblock body %}

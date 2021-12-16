@@ -40,12 +40,13 @@ def show_image(image, filename):
     plt.axis("off")
     plt.title(filename)
 
-if tf.test.gpu_device_name():
-    print('GPU found')
-else:
-    print("No GPU found")
+# if tf.test.gpu_device_name():
+#     print('GPU found')
+# else:
+#     print("No GPU found")
 
 def run_model(upload_path, save_path):
+    save_path, extension = os.path.splitext(save_path)
     model = hub.load("esrgan-tf2_1")
     # To add an extra dimension for batch, use tf.expand_dims()
     # Low Resolution Image of shape [batch_size, height, width, 3]

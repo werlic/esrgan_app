@@ -3,29 +3,84 @@
 {% block title %}ESRGAN Project - Super Resolution image{% endblock %}
 
 {% block body %}
-<nav class="navbar navbar-dark bg-primary">
-    <div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid px-3">
         <a class="navbar-brand" href="#"><h3 class="fw-bold">ESRGAN Project</h3></a>
-        <ul class="navbar-nav flex-right">
-            <li>About</li>
-        </ul>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+            aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item flext-right">
+                    <a class="nav-link active" href="#">Home</a>
+                </li>
+                <li class="nav-item flext-right">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
-<div class="container-fluid bg-light">
-    <div class="row py-5 allign-content-center">
-        <div class="col-md-4  text-center">
-            <h1 class="fw-bold">Do you want scaling your image?</h3>
-            <p></p>
+<div class="container-fluid">
+    <div class="row mx-5 p-5 align-items-center">
+        <div class="col-md-4 col-sm-12">
+            <h1 class="display-4 fw-bold">Do you want scaling your image?</h3>
+            <p>Get started with upload your image</p>
+            <a class="btn btn-primary btn-lg" href="">Get Started</a>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 d-none d-lg-block text-center">
             <img src="{{ url_for('static', filename='images/picture_dynamic_gradient_icon.png') }}" alt="Icon_photo">
+            <div class="position-absolute" style="width: 800px; opacity: 80%; z-index: -1; top: 0;">
+                <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="100%" id="blobSvg">
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color: rgb(127, 0, 255);"></stop>
+                            <stop offset="100%" style="stop-color: rgb(63, 43, 150);"></stop>
+                        </linearGradient>
+                    </defs>
+                    <path id="blob"
+                        d="M450,291Q421,332,387.5,356Q354,380,323,407Q292,434,247.5,444.5Q203,455,182,408.5Q161,362,135,340Q109,318,115.5,284Q122,250,103,210Q84,170,102,128.5Q120,87,163.5,73.5Q207,60,251.5,53Q296,46,325.5,82Q355,118,395.5,139Q436,160,457.5,205Q479,250,450,291Z"
+                        fill="url(#gradient)"></path>
+                </svg>
+            </div>
+            <div class="position-absolute" style="width: 800px; opacity: 40%; z-index: -1; top: -60; right: 120;">
+                <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%"
+                    id="blobSvg">
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color: rgb(142, 45, 226);"></stop>
+                            <stop offset="100%" style="stop-color: rgb(74, 0, 224);"></stop>
+                        </linearGradient>
+                    </defs>
+                    <path id="blob"
+                        d="M425,312.5Q375,375,312.5,387Q250,399,187.5,387Q125,375,86,312.5Q47,250,105.5,207Q164,164,207,138Q250,112,286.5,144.5Q323,177,399,213.5Q475,250,425,312.5Z"
+                        fill="url(#gradient)"></path>
+                </svg>
+            </div>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-8">
-
+    
+    <section id="Upload" class="bg-light mt-lg-5 py-5">
+        <div class="row justify-content-center text-center mt-4">
+            <h3 class="fw-bold">Upload Your Image</h3>
+            <div class="col-8 py-1">
+                <form action="">
+                    <input type="file" class="form-control" name="image" id="image" accept=".jpg">
+                    <br>
+                    <button type="submit" class="btn btn-success btn-lg">Upload</button>
+                </form>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <section id="contributtor">
+        <div class="container py-5">
+            <div class="row">
+                <h1 class="display-4 fw-bold">Thanks To</h1>
+            </div>
+        </div>
+    </section>
 </div>
 {% endblock body %}

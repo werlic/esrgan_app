@@ -1,10 +1,10 @@
-from flask import Flask
-from flask import request
-from flask import render_template
+from flask import Flask, request, render_template
+from werkzeug.utils import secure_filename
 import load_model
+import os
 
-UPLOAD_FOLDER = '/upload_file'
-SAVE_FOLDER = '/save_file'
+UPLOAD_FOLDER = 'upload_file'
+SAVE_FOLDER = 'save_file'
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -16,7 +16,9 @@ def home():
 @app.route("/upload", methods=["POST"])
 def upload():
     if request.files['image'] != None:
-        file = request.files
+        file = request.files['image']
+        filename = secure_filename(file.filename)
+        file.save(f'{app.config["UPLOAD_FOLDER"]}/{filename}')
         return "File Upload"
     else:
         return "File not upload!!"

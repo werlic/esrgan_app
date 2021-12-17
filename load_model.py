@@ -22,8 +22,8 @@ def save_image(image, filename):
     if not isinstance(image, Image.Image):
         image = tf.clip_by_value(image, 0, 255)
         image = Image.fromarray(tf.cast(image, tf.uint8).numpy())
-    image.save("%s.jpg" % filename)
-    print("Saved as %s.jpg" % filename)
+    image.save("%s" % filename)
+    print("Saved as %s" % filename)
 
 def show_image(image, filename):
     """
@@ -46,7 +46,7 @@ def show_image(image, filename):
 #     print("No GPU found")
 
 def run_model(upload_path, save_path):
-    save_path, extension = os.path.splitext(save_path)
+    # save_path, extension = os.path.splitext(save_path)
     model = hub.load("esrgan-tf2_1")
     # To add an extra dimension for batch, use tf.expand_dims()
     # Low Resolution Image of shape [batch_size, height, width, 3]

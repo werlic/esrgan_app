@@ -4,7 +4,7 @@ this is application web based to implemen model ESRGAN:Enchanhed Super Resolutio
 ## Installation
 recommended to run with virtuan environtment
 ```
-pip install > requirements.txt
+pip install -r requirements.txt
 ```
 ## Run
 ```

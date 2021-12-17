@@ -2,7 +2,7 @@
 this is application web based to implemen model ESRGAN:Enchanhed Super Resolution Generative Adversarial Network.
 
 ## Installation
-recommended to run with virtuan environtment
+recommended to run with virtual environment with name folder env if this env loacated in project file
 ```
 pip install -r requirements.txt
 ```

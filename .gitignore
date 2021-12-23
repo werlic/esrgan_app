@@ -2,5 +2,5 @@
 esrgan-tf2_1.tar.gz
 /__pycache__/
 
-/upload_file/
-/save_file/
+upload_file/*
+save_file/*
